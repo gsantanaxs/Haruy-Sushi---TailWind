@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haruy Shushi</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily:
+                {
+                    barlow: ['Barlow', 'sans-serif'],
+                },
+                colors: {
+                    primary: '#ca3c3f',
+                    dark: '#222222',
+                    muted: '#999999',
+                    footer: '#333333',
+                }
+            },
+        },
+    }
+</script>
+
+<body class="bg-gray-50">
+
+    <nav class="bg-white shadow-md fixed w-full z-10" x-data="{ open: false }">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+            <a href="#" class="flex items-center space-x-2">
+
+                <img src="assets/images/logo.png" alt="Logo" class="h-10 w-auto">
+                <span class="text-2xl font-bold text-red-600 hidden sm:inline"></span>
+            </a>
+
+            <button @click="open = !open" class="md:hidden text-gray-700 focus:outline-none">
+                <svg x-show="!open" class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg x-show="open" class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-red-600 font-semibold">Home</a>
+                <a href="#cardapio" class="text-gray-700 hover:text-red-600 font-semibold">Cardápio</a>
+                <a href="#sobre" class="text-gray-700 hover:text-red-600 font-semibold">Sobre</a>
+                <a href="#contato" class="text-gray-700 hover:text-red-600 font-semibold">Contato</a>
+            </div>
+        </div>
+
+        <div x-show="open" class="md:hidden bg-white shadow-md">
+            <a href="#home" class="block px-4 py-2 text-gray-700 hover:bg-red-50">Home</a>
+            <a href="#cardapio" class="block px-4 py-2 text-gray-700 hover:bg-red-50">Cardápio</a>
+            <a href="#sobre" class="block px-4 py-2 text-gray-700 hover:bg-red-50">Sobre</a>
+            <a href="#contato" class="block px-4 py-2 text-gray-700 hover:bg-red-50">Contato</a>
+        </div>
+    </nav>
+    <div class="h-16"></div>
+
+
+    <div class="h-16"></div>
+
+
+    <section class="banner">
+        <div class="coluna">
+            <p><b style="font-size:30px;">O verdadeiro sabor da cozinha japonesa</b></p>
+            <p><a class="botao" href="#cardapio">VEJA O CARDÁPIO</a></p>
+        </div>
+        <div class="coluna">
+            <img src="./assets/images/banner.png" alt="prato">
+        </div>
+    </section>
+
+    <section class="cardapio" id="cardapio">
+        <h1 style="font-size:30px; font-weight:bold; text-align:center;">Cardápio</h1>
+
+        <!-- menu de categoria inicio -->
+        <nav id="nav-categorias" class="overflow-x-auto whitespace-nowrap snap-x flex gap-2 mt-6 pb-1">
+            <button data-cat="sushi"
+                class="snap-start px-4 py-1 rounded-full bg-primary text-white font-bold text-sm transition-transform duration-150 cursor-pointer flex-shrink-0 btn-cat">Sushi</button>
+            <button data-cat="temakis"
+                class="snap-start px-4 py-1 rounded-full bg-primary text-white font-bold text-sm transition-transform duration-150 cursor-pointer flex-shrink-0 btn-cat">Temakis</button>
+            <button data-cat="bebidas"
+                class="snap-start px-4 py-1 rounded-full bg-primary text-white font-bold text-sm transition-transform duration-150 cursor-pointer flex-shrink-0 btn-cat">Bebidas</button>
+            <button data-cat="sobremesas"
+                class="snap-start px-4 py-1 rounded-full bg-primary text-white font-bold text-sm transition-transform duration-150 cursor-pointer flex-shrink-0 btn-cat">Sobremesas</button>
+        </nav>
+
+        <!-- menu de categoria fim -->
+
+        <!-- categoria: sushi-->
+        <div id="cat-sushi" class="cardapio-conteudo">
+            <div class="text-left text-primary text-[22px] mt-[50px]">
+                <span style="color:#ca3c3f;">Sushi</span>
+                <div class="cardapio-item">
+                    <div class="cardapio-nome" style="color:#222;">Combinado Sushi</div>
+                    <div class="cardapio-preco">R$ 29,00</div>
+                    <div class="cardapio-descricao">10 Sashimis Variados, 10 Uramakis Filadélfia e 10 Uramakis</div>
+
+                    <div class="cardapio-item">
+                        <div class="cardapio-nome" style="color:#222;">Combinado Sushi</div>
+                        <div class="cardapio-preco">R$ 55,00</div>
+                        <div class="cardapio-descricao">10 Sashimis Variados, 10 Uramakis Filadélfia e 10 Uramakis</div>
+                        <div>
+
+                        </div>
+
+
+                    </div>
+                    <div class="cardapio-item">
+                        <div class="cardapio-nome" style="color:#222;">Combinado Hot</div>
+                        <div class="cardapio-preco">R$ 75,00</div>
+                        <div class="cardapio-descricao">10 Sashimis Variados, 10 Uramakis Filadélfia e 10 Uramakis</div>
+                    </div>
+
+                </div>
+                <div class="cardapio-item">
+                    <div class="cardapio-nome" style="color:#222;">Combinado Yakissoba</div>
+                    <div class="cardapio-preco">R$ 45,00</div>
+                    <div class="cardapio-descricao">10 Sashimis Variados, 10 Uramakis Filadélfia e 10 Uramakis</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- categoria: bebidas-->
+        <div id="cat-bebidas" class="cardapio-conteudo hidden">
+            <div class="text-left text-primary text-[22px] mt-[50px]">
+                Bebidas
+            </div>
+            <div class="cardapio-item">
+                <div class="cardapio-nome">Refrigerante</div>
+                <div class="cardapio-preco">R$ 8,00</div>
+                <div class="cardapio-descricao">Lata (coca-cola, guaraná)</div>
+            </div>
+            <div class="cardapio-item">
+                <div class="cardapio-nome">Água</div>
+                <div class="cardapio-preco">R$ 4,00</div>
+                <div class="cardapio-descricao">Garrafa 500ml</div>
+            </div>
+            <div class="cardapio-item">
+                <div class="cardapio-nome">Cerveja</div>
+                <div class="cardapio-preco">R$ 14,00</div>
+                <div class="cardapio-descricao">Heineken</div>
+            </div>
+        </div>
+
+        <!-- categoria: temakis-->
+        <div id="cat-temakis" class="cardapio-conteudo hidden">
+            <div class="text-left text-primary text-[22px] mt-[50px]">
+                Temakis
+            </div>
+            <div class="cardapio-item">
+                <div class="cardapio-nome">Temaki de Salmão</div>
+                <div class="cardapio-preco">R$ 12,00</div>
+                <div class="cardapio-descricao">Salmão, arroz, alga nori</div>
+            </div>
+            <div class="cardapio-item">
+                <div class="cardapio-nome">Temaki de Atum</div>
+                <div class="cardapio-preco">R$ 14,00</div>
+                <div class="cardapio-descricao">Atum, maionese, cebolinha</div>
+            </div>
+        </div>
+
+        <!-- categoria: sobremesas-->
+        <div id="cat-sobremesas" class="cardapio-conteudo hidden">
+            <div class="text-left text-primary text-[22px] mt-[50px]">
+                Sobremesas
+            </div>
+            <div class="cardapio-item">
+                <div class="cardapio-nome">Sorvete de Chá Verde</div>
+                <div class="cardapio-preco">R$ 10,00</div>
+                <div class="cardapio-descricao">Delicioso sorvete caseiro</div>
+            </div>
+            <div class="cardapio-item">
+                <div class="cardapio-nome">Tempurá de Banana</div>
+                <div class="cardapio-preco">R$ 8,00</div>
+                <div class="cardapio-descricao">Banana frita com tempurá crocante</div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="mt-[100px] text-center p-[50px] text-sm text-white bg-footer">
+        <h3 class="font-bold text-lg">Haruy Sushi</h3>
+        <p class="my-[3px]">Rua Prof. Toledo, 500, centro - Sorocaba</p>
+        <p class="my-[3px]">WhatsApp: (15) 98765-4321</p>
+        <p class="my-[3px]">Aberto todos os dias das 14h ás 23h</p>
+    </footer>
+
+    <a href="https://wa.me/5515987654321" target="_blank" class="link-whatsapp">
+        <img src="./assets/images/whatsapp.png" alt="link-whatsapp">
+    </a>
+    <script>
+        const botoes = document.querySelectorAll('.btn-cat');
+        const conteudos = document.querySelectorAll('.cardapio-conteudo');
+
+        function mostrarCategoria(cat) {
+            //monstrar o conteudo da categoria selecionada
+            conteudos.forEach(div => {
+                div.id === 'cat-' + cat
+                    ? div.classList.remove('hidden')
+                    : div.classList.add('hidden');
+            });
+            //atualizar o estilo do botão ativo
+            botoes.forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.classList.add('bg-primary', 'text-white');
+                    btn.classList.remove('bg-[#ebebeb]', 'text-dark');
+                }else {
+                    btn.classList.remove('bg-primary', 'text-white');
+                    btn.classList.add('bg-[#ebebeb]', 'text-dark');
+                }
+            });
+        }
+
+        botoes.forEach(btn => {
+            btn.addEventListener('touchstart', () => {
+                btn.classList.add('scale-95');
+                mudarCategoria(btn.dataset.cat);
+            });
+                btn.addEventListener('touchend', () => {
+                    btn.classList.remove('scale-95');
+                });
+                btn.addEventListener('click', () => {
+                    mostrarCategoria(btn.dataset.cat);
+                });
+        });
+
+        let startX = 0;
+        let startY = 0;
+
+        botoes.forEach(btn => {
+            btn.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+                btn.classList.add('scale-95', 'opacity-80');
+            });
+            btn.addEventListener('touchend', (e) => {
+                btn.classList.remove('scale-95', 'opacity-80');
+                const endX = e.changedTouches[0].clientX;
+                const endY = e.changedTouches[0].clientY;
+                const deltaX = Math.abs(endX - startX);
+                const deltaY = Math.abs(endY - startY);
+
+                if (deltaX < 10 && deltaY < 10) {
+                    mudarCategoria(btn.dataset.cat);
+                }
+            });
+            btn.addEventListener('touchcancel', () => {
+                btn.classList.remove('scale-95', 'opacity-80');
+            });
+            btn.addEventListener('click', () => {
+                mudarCategoria(btn.dataset.cat);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
